@@ -28,7 +28,7 @@ function TestTable(title, headers, rows) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/happiness_scores")
+    fetch("/table")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -37,7 +37,7 @@ function TestTable(title, headers, rows) {
   }, []);
 
   const layout = {
-    title: "Sample Table",
+    title: "Preview The Data",
   };
 
   const columns = Object.keys(data);
