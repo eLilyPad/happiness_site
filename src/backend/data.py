@@ -14,6 +14,18 @@ def get_countries():
     df = read_data()
     return df['Country'].to_list()
 
+
+def get_table_data(year: int, sort_by: str, columns: list[str], ascending: bool = False):
+    df = read_data()
+    yearly_df = df[df["Year"] == year]
+    sorted_df = yearly_df.sort_values(
+        by = sort_by, 
+        ascending = ascending
+    )
+    table_data = sorted_df[columns].to_dict(orient = 'list')
+    
+    return table_data
+
 def happiness_table(year: int, limit: int, ascending: bool = False) -> go.Figure:
     df = read_data()
     yearly_df = df[df["Year"] == year]
