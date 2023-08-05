@@ -12,8 +12,8 @@ def list():
 def countries():
     return {'countries': data.get_countries()}
 
-@api.route('/table')
-def table():
+@api.route('/table/<year>/<columns>')
+def table(year, columns):
     return jsonify(data.get_table_data(
         year = 2015, 
         sort_by = 'happiness_score', 

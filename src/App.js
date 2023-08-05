@@ -24,11 +24,51 @@ function ListCountries() {
   );
 }
 
+function ColumnPicker() {
+  const [selectedColumns, setSelectedColumns] = useState([]);
+
+  const columns = [
+    { key: "happiness_score", title: "Happiness Score" },
+    { key: "freedom", title: "Freedom" },
+    { key: "gdp_per_capita", title: "GDP per Capita" },
+  ];
+  const handleSelectChange = (event) => {
+    const options = [...event.target.selectedOptions];
+    const values = options.map((o) => o.value);
+
+    setSelectedColumns(values);
+  };
+
+  return (
+    <div>
+      <label>
+        Pick columns you want to see:
+        <br />
+        <select
+          name="selectedColumns"
+          value={selectedColumns}
+          multiple={true}
+          onChange={handleSelectChange}
+        >
+          {columns.map((column, index) => {
+            return (
+              <option key={index} value={column.key}>
+                {column.title}
+              </option>
+            );
+          })}
+        </select>
+      </label>
+      <p>Selected options: {selectedColumns.join(", ")}</p>
+    </div>
+  );
+}
+
 function TestTable(title, headers, rows) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/table")
+    fetch("/table/2015/happiness_score")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -66,7 +106,12 @@ function TestTable(title, headers, rows) {
 }
 
 function App() {
-  return TestTable();
+  return (
+    <div>
+      {ColumnPicker()}
+      {TestTable()}
+    </div>
+  );
 }
 
 export default App;
