@@ -68,7 +68,7 @@ function TestTable(title, headers, rows) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/table/2015/happiness_score")
+    fetch("/table")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

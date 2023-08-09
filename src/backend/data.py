@@ -14,7 +14,6 @@ def get_countries():
     df = read_data()
     return df['Country'].unique().tolist()
 
-
 def get_table_data(year: int, sort_by: str, columns: list[str], ascending: bool = False):
     df = read_data()
     yearly_df = df[df["Year"] == year]

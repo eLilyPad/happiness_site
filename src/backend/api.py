@@ -12,7 +12,7 @@ def list():
 def countries():
     return {'countries': data.get_countries()}
 
-@api.route('/table/<year>/<columns>')
+@api.route('/table')
 def table(year, columns):
     return jsonify(data.get_table_data(
         year = 2015, 
