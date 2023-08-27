@@ -8,6 +8,7 @@ file_location = "./Data/"
 file_type = ".csv"
 
 def read_data():
+    
     return pd.read_csv( file_location + file_name + file_type)
 
 def get_countries():

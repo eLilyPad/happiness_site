@@ -13,9 +13,14 @@ def countries():
     return {'countries': data.get_countries()}
 
 @api.route('/table')
-def table(year, columns):
-    return jsonify(data.get_table_data(
+def table():
+    table_data = data.get_table_data(
         year = 2015, 
         sort_by = 'happiness_score', 
         columns = ['Country', 'happiness_score']
-    ))
+    )
+    
+    # if table_data is None:
+    #     return 501
+
+    return jsonify(table_data)

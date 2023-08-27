@@ -64,14 +64,21 @@ function ColumnPicker() {
   );
 }
 
-function TestTable(title, headers, rows) {
+function TestTable() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetch("/table")
-      .then((res) => res.json())
+      .then((res) => {
+        console.log("Fetching Data...");
+        res.json();
+      })
       .then((data) => {
         console.log(data);
+        if (data === 501) {
+          console.log("Data not found...");
+          return null;
+        }
         setData(data);
       });
   }, []);
