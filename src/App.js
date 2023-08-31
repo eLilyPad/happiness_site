@@ -59,7 +59,7 @@ function ColumnPicker() {
           })}
         </select>
       </label>
-      <p>Selected options: {selectedColumns.join(", ")}</p>
+      <p>Selected options: {selectedColumns.join("-")}</p>
     </div>
   );
 }
@@ -68,24 +68,21 @@ function TestTable() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/table")
-      .then((res) => {
-        console.log("Fetching Data...");
-        res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        if (data === 501) {
-          console.log("Data not found...");
-          return null;
-        }
-        setData(data);
-      });
+    fetch("/table/Country-happiness_score/")
+      .then((res) => res.json())
+      .then(setData);
   }, []);
+
+  const getTable = () => {};
 
   const layout = {
     title: "Preview The Data",
   };
+
+  if (data === undefined) {
+    console.log("API data is undefined, unable to build table");
+    return "No table is available";
+  }
 
   const columns = Object.keys(data);
   const tableRows = Object.values(data);
