@@ -1,8 +1,11 @@
+import { Route, Routes } from "react-router-dom";
+
+import "./App.scss";
+import Layout from "./Components/Layout";
+
 import React, { useState, useEffect } from "react";
-// import Plotly from "plotly.js";
-// import createPlotlyComponent from "react-plotly.js/factory";
 import Plot from "react-plotly.js";
-import "./App.css";
+import "./App.scss";
 import { Data } from "plotly.js";
 
 // const Plot = createPlotlyComponent(Plotly);
@@ -115,10 +118,15 @@ function TestTable() {
 
 function App() {
   return (
-    <div>
-      {ColumnPicker()}
-      {TestTable()}
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+      </Routes>
+    </>
+    // <div>
+    //   {ColumnPicker()}
+    //   {TestTable()}
+    // </div>
   );
 }
 
