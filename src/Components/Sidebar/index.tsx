@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 
 import React from "react";
 import "./index.scss";
@@ -8,15 +8,22 @@ import "./index.scss";
 export default function Sidebar() {
   return (
     <div className="nav-bar">
-      <Link className="logo" to="/">
-        {/* <img src={Logo} alt="logo" /> */}
-        {/* <img className="sub-logo" src={LogoSubtitle} alt="elizabeth" /> */}
-      </Link>
       <nav>
-        <NavLink to="/"></NavLink>
-        <NavLink to="/about"></NavLink>
-        <NavLink to="/contact"></NavLink>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/data">Data</Link>
+          </li>
+        </ul>
+        {/* <Link className="logo" to="/">
+        <img src={Logo} alt="logo" />
+        <img className="sub-logo" src={LogoSubtitle} alt="elizabeth" />
+      </Link> */}
       </nav>
+
+      <Outlet />
     </div>
   );
 }
