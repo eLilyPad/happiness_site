@@ -5,19 +5,13 @@ import "./index.scss";
 
 export default function Layout() {
   return (
-    <div className="nav-bar">
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/data">Data</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Outlet />
-    </div>
+    <>
+      <div className="sidebar">
+        <Sidebar />
+      </div>
+      <div className="outlet">
+        <Outlet />
+      </div>
+    </>
   );
 }
