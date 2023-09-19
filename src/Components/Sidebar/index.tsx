@@ -16,8 +16,6 @@ export default function Sidebar() {
         <img className="sub-logo" src={LogoSubtitle} alt="elizabeth" />
       </Link> */}
       </nav>
-
-      <Outlet />
     </div>
   );
 }

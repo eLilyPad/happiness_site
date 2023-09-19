@@ -1,9 +1,13 @@
 .sidebar {
-  margin: 30%;
+  //   margin: %;
   padding: 10%;
 }
 .outlet {
-  position: relative; /* or absolute, fixed */
-  top: 20px; /* Adjust as needed */
-  left: 20px;
+  //   position: relative; /* or absolute, fixed */
+  //   top: 20px; /* Adjust as needed */
+  //   left: 20px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 120px 70%;
 }

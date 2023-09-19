@@ -1,1 +1,1 @@
-.sidebar{margin:30%;padding:10%}.outlet{position:relative;top:20px;left:20px}
+.sidebar{padding:10%}.layout{display:grid;grid-template-columns:120px 70%}
