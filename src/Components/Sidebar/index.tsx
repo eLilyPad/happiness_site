@@ -11,6 +11,7 @@ export default function Sidebar() {
       <nav>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/overview">Overview</NavLink>
+        <NavLink to="/charts">Charts</NavLink>
         {/* <Link className="logo" to="/">
         <img src={Logo} alt="logo" />
         <img className="sub-logo" src={LogoSubtitle} alt="elizabeth" />

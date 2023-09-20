@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Plot from "react-plotly.js";
-import { Data } from "plotly.js";
+// import Plot from "react-plotly.js";
+// import { Data } from "plotly.js";
+import PlotlyChart from "react-plotlyjs-ts";
 
 // const Plot = createPlotlyComponent(Plotly);
 
@@ -107,7 +108,7 @@ function TestTable() {
   ];
 
   // TODO: Plot table does not work with type script
-  // return <Plot data={data} layout={layout} />;
+  // return <PlotlyChart data={data} layout={layout} />;
 }
 
 export default function Overview() {
