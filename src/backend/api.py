@@ -4,6 +4,10 @@ import data
 
 api = Flask(__name__)
 
+@api.route('/')
+def index():
+    return ('404')
+
 @api.route('/list')
 def list():
     return {'list': [1, 2, 3, 4]}
